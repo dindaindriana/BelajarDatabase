@@ -1,0 +1,116 @@
+Alias 
+=====
+
+- alias kolom
+select id as "Kode",
+	name as "Nama",
+	category as "Kategory",
+	desccription as "Deskripsi",
+	price as "Harga",
+	quantity as "Jumlah"
+	from products;
+
+- alias untuk table
+select 	p.id as "Kode",
+		p.name as "Nama",
+		p.category as "Kategori",
+		p.description as "Deskripsi",
+		p.price as "Harga",
+		p.quantity as "Jumlah"
+	from products as p;
+
+
+Operator where
+==============
+
+Operator perbandingan
+=====================
+
+select * from products where price < 50000;
+
+- macam macam operator perbandingan
+=, !=, <, >, <=, >=
+
+
+Operator AND dan OR
+===================
+
+- operator and
+select * from products where price = 15000 AND name = "Rachel";
+
+- operator or
+select * from products where price = 15000 or name = "Dinda";
+
+- kombinasikan operator and dan or
+- pada umumnya kalau di kombinasikan yang di prioritasnya itu AND dlu
+
+- prioritas dengan kurung ()
+select * from products where (price < 50000 or quantity > 10000) and name = "Rachel";
+
+
+Operator LIKE
+=============
+
+- dengan awal dan akhir kata
+select * from products where name LIKE '%r%';
+
+- tidak like 
+select * from products where name NOT LIKE '%rachel%';
+
+
+Operator NULL
+=============
+
+- menampilkan yang null
+select * from products where description is null;
+
+- menampilkan yang tidak null
+select * from products where description is not null;
+
+
+Between Operator
+================
+
+- operator ini hampir sama dengan operator perbandingan
+- menampilkan antara 
+select * from products where price between 30000 and 70000;
+
+- menampilkan yang di bukan diantaranya
+select * from products where price not between 30000 and 70000;
+
+
+
+Operator IN
+============
+
+- menampilkan yang ada di dalam
+select * from products where category in ("Makanan");	
+
+- menampilkan yang tidak ada di dalam
+select * from products where category not in ("Makanan");
+
+
+Order By Clause
+===============
+
+- asc
+select * from products order by nama_column asc;
+
+- desc
+select * from products order by nama_column desc;
+
+- banyak kolom
+select * from products order by nama_column asc, id desc;
+
+
+Limit clause
+============
+
+- limit 2 data
+select * from products order by name asc limit 2; 
+
+- limit dan skip daa
+select * from products order by id asc limit 1, 2;
+
+
+

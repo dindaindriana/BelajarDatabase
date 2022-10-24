@@ -1,0 +1,97 @@
+Membuat table products
+======================
+
+create table products (
+    id varchar(10) not null,
+    name varchar(100) not null,
+    description text,
+    price int unsigned not null,
+    quantity int unsigned not null default 0,
+    created_at timestamp not null default current_timestamp
+    )engine = innodb;
+
+- memasukkan data
+insert into products (id, name , price, quantity)
+    values (1, "Rachel", 15000, 20000);
+
+- menampilkan semua isi table
+select * from products;
+
+- memasukkan beberapa data
+ insert into products (id, name , price, quantity)
+    values (1, "Rachel", 15000, 20000),
+		(2, "Dinda", 15000, 20000),
+		(3, "Adun", 15000, 20000),
+		(4, "Rozi", 15000, 20000);
+
+Select data
+===========
+
+- mengambil semua kolom
+select * from nama_table;
+
+- mengambil hanya beberapa kolom atau kolom tertentu
+ select id, name, price, quantity from products;
+
+- mengamblil column berdasarkan explicit
+select nama_column form nama_table where id = 1;
+
+
+Primary key
+===========
+
+- membuat table dengan primary key
+create table barangs (
+	id int(10),
+	name varchar(100),
+	description text,
+	price int,
+	quantity int,
+	primary key (id)
+	);
+
+
+Select data berdasarkan klausa where
+====================================
+
+- berdasarkan id
+select * from products where quantity = 15000;
+
+mysql itu tidak case in sensitif
+
+
+Update data
+===========
+
+- update data berdasarkan klausa where
+- update satu kolom
+update products 
+set category = "Makanan"
+where id = 1;
+
+- mengubah beberapa kolom
+update products 
+set category = "Makanan",
+	description = "Nasi Goreng + Telor" 
+where id = 2;
+
+- mengubah dengan value di kolom
+update products 
+set price = price + 5000
+where id = 3;
+
+
+Delete data
+===========
+
+- hapus semua data
+delete from products;
+
+- hapus berdasarkan klausa
+delete from products where id = 4;
+
+
+
+
+
+

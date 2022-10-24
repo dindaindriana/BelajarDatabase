@@ -1,0 +1,44 @@
+Praktikum Basis Data
+26/9/202
+
+DDL : add, drop
+DML : insert, update, select, delete, select-alias, select-like, select-function-left & right, if
+
+
+DDL
+===
+- Mengubah struktur tabel
+alter table jurusan add sk_pendirian varchar(50) after nama_kajur;
+
+- Menghapus struktur tabel
+alter table jurusan drop sk_pendirian;
+
+DML
+===
+- Memasukkan data ke dalam tabel
+insert into jurusan (kode_jurusan, nama_jurusan, nip_kajur, nama_kajur, ket) values
+	("TIK006", "Teknologi Informasi dan Komputer", "19750707 199903100", " Muhammad Arhami, S.Si.", "NULL");
+
+- Mengubah data di dalam tabel
+update jurusan set nama_kajur = "Muhammad Arhami, S.Si., M.Kom" where kode_jurusan = "TIK006";
+
+- Mengubah data di dalam tabel lebih dari satu field
+update jurusan set nip_kajur = "197410292000031001", nama_kajur = "Muhammad Arhami, S.Si., M.Kom" where kode_jurusan = "TIK006";
+
+- Menampilkan seluruh data di dalam tabel
+select * from jurusan
+
+- Menghapus data di dalam tabel
+delete from jurusan where kode_jurusan = "ELE004";
+
+- Menampilkan data dengan alias
+select nama_jurusan as "Nama Jurusan" from jurusan;
+
+- Menampilkan data dengan function left
+select nama_kajur, left(nama_kajur, 3) from jurusan;
+
+- Menampilkan data dengan where like
+select nama_kajur from jurusan where nama_kajur like '%ni%'; 
+
+- Menampilkan data dengan where if
+select nama_jurusan as "Nama Jurusan", if(kode_jurusan = "TIK006", "Jurusan Terfavorit", "Biasa Aja") as "Komentar" from jurusan;

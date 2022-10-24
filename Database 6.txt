@@ -1,0 +1,69 @@
+Grouping
+========
+
+Group by clause
+===============
+
+- melihat jumlah per product
+select category, count(id) as "Total Product" from products group by category;
+
+- melihat nilai tertinggi dari setiap product
+select category, max(price) as "Harga Termahal" from products group by category;
+
+- melihat nilai terendah dari setiap product
+select category, min(price) as "Harga Termurah" from products group by category;
+
+- melihat rata-rata nilai dari setiap product
+select category, avg(price) as "Rata-rata" from products group by category;
+
+- melihat jumlah nilai dari setiapp product
+select category, sum(price) as "Jumlah Harga" from products group by category;
+
+
+Having clause
+=============
+
+select category, count(id) as Total from products group by category having Total < 1;
+
+
+Contstraint
+===========
+
+- unique contstraint
+create table customers(
+	id int not null auto_increment,
+	email varchar(100) not null,
+	first_name varchar(100) not null,
+	last_name varchar(100),
+	primary key(id),
+	unique key(email)
+); 
+
+- menambahkan unique dengan alter table
+alter table customers
+	add constraint unique_email unique(email);
+
+- menghapus unique dengan alter table
+alter table customers
+	drop contraint unique_email;
+
+- memasukkan data customers
+insert into customers (email, first_name, last_name) values
+	('rachel@gmail.com', 'Rachel', 'Ginting);
+
+kalau dimasukkan data dengan email yang sama, maka akan terjadi duplicate entry data, karena email unique
+
+
+Check constraint
+================
+
+- menambahkan constraint check dengan alter table
+alter table products
+    add constraint price_check check(price >= 10000);
+
+insert into products (name, category, description, price, quantity) values
+    ('Adind', "Minuman", "Jus Wortel", 9000, 2);
+
+tidak bisa dimasukkkan karena constraint check price di bawah 10000
+
+

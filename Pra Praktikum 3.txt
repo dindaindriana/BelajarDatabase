@@ -1,0 +1,14 @@
+Membuat tabel prodi
+ create table prodi (
+    -> kode_prodi varchar(6) not null primary key,
+    -> nama_prodi varchar(50) not null,
+    -> nip_kaprodi varchar(18) not null,
+    -> nama_kaprodi varchar(50) not null,
+    -> status_akreditasi char
+    -> );
+
+Mengisi data tabel prodi
+insert into prodi values
+    -> ("TI0001", "Teknik Informatika", "123678910", "Salahuddin, S.St., M.Cs", "A"),
+    -> ("TRMM02", "Teknologi Rekayasa Jaringan", "123678911", "Rachel, S.St., M.Cs", "A"),
+    -> ("TRMM03", "Teknologi Rekayasa Multimedia", "123678912", "Ginting, S.St., M.Cs", "A");

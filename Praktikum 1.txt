@@ -1,0 +1,129 @@
+Praktikum Basis Data
+12/9/2022
+
+Masuk ke mysql
+mysql -u root -p
+
+Menampilkan database
+show databases;
+
+Membuat database
+create database akademik;
+
+Menggunakan database
+use database jurusan;
+
+Membuat table
+create table jurusan(
+    kode_jurusan varchar(6) not null primary key,
+    nama_jurusan varchar(50) not null,
+    nip_kajur varchar(18) not null,
+    nama_kajur varchar(50) not null,
+    keterangan varchar(255)
+    );
+
+Menampilkan table
+show tables;
+
+Menampilkan struktur table
+desc jurusan;
+
+Memasukkan data
+ insert into jurusan (kode_jurusan, nama_jurusan, nip_kajur, nama_kajur) values
+    ("1", "Teknologi Informasi dan Komputer", "202210", "Muhammad Arhami"),
+    ("2", "Teknologi Mesin", "202211", "Rachel Ginting");
+
+Menampilkan semua data
+select * from jurusan;
+
+
+
+Task 1
+=======
+1. Database 	: DBPERPUSTAKAAN
+2. Tabel		: ANGGOTA
+3. Struktur Tabel	:
+	id_anggota varchar(6) primary key not null,
+	nim varchar(13) not null,
+	nama_anggota varchar(50) not null,
+	jkel varchar(20) not null,
+	alamat varchar(100)
+
+	Data yang diisikan ke dalam minimal 30 data;
+
+4. Insert data tabel jurusan sesuai dengan Jurusan Politeknik Negeri Lhokseumawe
+insert data tabel jurusan;
+
+
+Result
+======
+
+1. Membuat Database dbperpustakaan
+	create database dbperpustakaan;
+
+2. Membuat tabel anggota
+	create table anggota(
+		id_anggota varchar(6) not null primary key,
+		nim varchar(13) not null,
+		nama_anggota varchar(50) not null,
+		jkel varchar(20) not null,
+		alamat varchar(50)
+	);
+
+3. Memasukkan data ke dalam tabel anggota
+	insert into anggota (id_anggota, kode_prodi, nim_anggota, nama_anggota, jkel, alamat) values
+		("TIK1", "TIK005", "2022573010003", "A'fiyyah Salsabillah Nhazalta", "Perempuan", ""),
+		("TIK2", "TIK005", "2022573010081", "Agung Ramadhan Setiawan", "Laki-laki", ""),
+		("TIK3", "TIK005", "2022573010060", "Andrian Fakhruza", "Laki-laki", "Jl. Cut Mutia No. 368 Panggoi Kec. Muara Dua, Kota Lhokseumawe"),
+		("TIK4", "TIK005", "2022573010005", "Aura Syaskia", "Perempuan", ""),
+		("TIK5", "TIK005", "2022573010007", "Cut Siti Sarah Azkiani", "Perempuan", ""),
+		("TIK6", "TIK005", "2022573010009", "Dimas Kurniawan", "Laki-laki", ""),
+		("TIK7", "TIK005", "2022573010011", "Fachrul Rozi Rangkuti", "Laki-laki", "Jl. Medan-Banda Aceh, Tambon Baroh, Kec. Dewantara, Kota Lhokseumawe"),
+		("TIK8", "TIK005", "2022573010090", "Febri Fanisa", "Perempuan", ""),
+		("TIK9", "TIK005", "2022573010093", "Jabal Akbar", "Laki-laki", ""),
+		("TIK10", "TIK005", "2022573010093", "M. Akbar Zulfikar", "Laki-laki", "Jl. Rel Kereta Api, Mesjid Punteut, Kec. Blang Mangat, Kota Lhokseumawe"),
+		("TIK11", "TIK005", "2022573010067", "Muhammad Abil", "Laki-laki", ""),
+		("TIK12", "TIK005", "2022573010020", "Muhammad Alfitrah", "Laki-laki", "Jl. Darussalam, Hagu Barat Laut, Kec. Banda Sakti, Kota Lhokseumawe"),
+		("TIK13", "TIK005", "2022573010097", "Muhammad Fadhilla", "Laki-laki", ""),
+		("TIK14", "TIK005", "2022573010100", "Muhammad Maulana", "Laki-laki", "Jl. Peutuah Rumoh Rayeuk, Teumpok Teungoh, Kec. Banda sakti, Kota Lhokseumawe"),
+		("TIK15", "TIK005", "2022573010069", "Muhammad Rafli Aulia", "Laki-laki", ""),
+		("TIK16", "TIK005", "2022573010023", "Muhammad Rizki", "Laki-laki", "Jl. Medan-Banda aceh, Punteut, Kota Lhokseumawe"),
+		("TIK17", "TIK005", "2022573010026", "Mulyani", "Perempuan", ""),
+		("TIK18", "TIK005", "2022573010029", "Naomi Natalie Br Sembiring", "Perempuan", ""),
+		("TIK18", "TIK005", "2022573010107", "Nia Ramadhani", "Perempuan", ""),
+		("TIK20", "TIK005", "2022573010035", "Nora Syuhada", "Perempuan", ""),
+		("TIK21", "TIK005", "2022573010073", "Nurul Afiqah Simbolon", "Perempuan", ""),
+		("TIK22", "TIK005", "2022573010037", "Nurul Agustina", "Perempuan", ""),
+		("TIK22", "TIK005", "2022573010111", "Rachel Ardana Putra Ginting", "Laki-laki", "Jl. Medan - Banda Aceh RW.Buketrata, Mesjid Punteut, Kec. Blang Mangat, Kota Lhokseumawe"),
+		("TIK24", "TIK005", "2022573010114", "Reyhan Putra Syahmi", "Laki-laki", ""),
+		("TIK25", "TIK005", "2022573010041", "Safira Dara Sholehah", "Perempuan", ""),
+		("TIK26", "TIK005", "2022573010076", "Sharaf Furqana", "Laki-laki", ""),
+		("TIK27", "TIK005", "2022573010046", "Sri Mutia", "Perempuan", ""),
+		("TIK28", "TIK005", "2022573010048", "Syahira Maharani", "Perempuan", ""),
+		("TIK29", "TIK005", "2022573010118", "Tasya Anisa", "Perempuan", ""),
+		("TIK30", "TIK005", "2022573010052", "Tri Kumala Sari", "Perempuan", "");
+
+
+
+4. Memasukkan data yang tepat ke dalam tabel jurusan
+	insert into jurusan (kode_jurusan, nama_jurusan, nip_kajur, nama_kajur) values
+		("SIP001", "Teknik Sipil", "197706032002121003", "Syukri, S.T., M.T."),
+		("KIM002", "Teknik Kimia", "196609301993031003", "Dr. Ir. Saifuddin, M.T."),
+		("MES003", "Teknik Mesin", "197407111999031003", "Hamdani, SST, MT"),
+		("ELE004", "Teknik Elektro", "197301062003121008", "Yassir, S.T., M.Eng."),
+		("TANIA5", "Tata Niaga", "197407111999031004", "Zulkarnaini, S.E., M.Si. Ak. CA"),
+		("TIK006", "Teknologi Informasi dan Komputer", "19750707 1999031002", "Muhammad Arhami, S.Si., M.Kom");
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

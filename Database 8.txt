@@ -1,0 +1,36 @@
+Table Relationship
+==================
+
+Foreign Key
+===========
+
+- Create table wishlist(
+	id int not null auto_increment,
+	id_product int(10) not null,
+	description text,
+	primary key(id),
+	constraint fk_wishlisht_product foreign key (id_product) references product (id)
+	);
+
+- Menghapus foreign key alter
+alter table wishlist 
+drop constraint fk_wishlist_product;
+
+- Menambahkan foreign key dengan alter
+alter table wishlist
+add constraint fk_wishlist_product 
+foreign key(id_product) references products(id);
+
+- Menambahkan data ke dalam tabel wishlist
+insert into wishlist (id_product, description) values(1, 'Makanan Kesukaan');
+
+Kentungan menggunakan foreign key adalah ketika menambahkan atau mengubah data harus valid dan tidak mungkin salah 
+karena datanya digunakan di tabel lain
+
+-contoh ketika salah
+insert into wishlist(id_product, description) values(salah, 'Makanan Kesukaan');
+
+Maka akan muncul pesan seperti berikut
+Cannot add or update a child row: a foreign key constraint fails (`belajar_mysql`.`wishlist`, 
+CONSTRAINT `fk_wishlist_product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`))
+

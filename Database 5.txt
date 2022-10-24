@@ -1,0 +1,79 @@
+String function
+===============
+
+- lower case
+select id, lower(name) as 'Nama Lower' from products;
+
+- melihat panjang karakter
+select id, length(name) as 'Length Name' form products;
+
+- gabungkan function
+
+select id, 
+	length(name) as 'Length Name', 
+	upper(name) as 'Upper Name' 
+	from products;
+
+
+Date dan Time Function
+======================
+
+- menambahkan kolomm timestamp
+- mengambil tahun, bulan
+select id, created_at, year(created_at) as "Year", month(created_at) as "Month" from products;
+
+
+Control Flow 
+============
+
+- case
+select id, case category
+    when "Makanan" then "Enak Tenan"
+    else "Apaan tuh?"
+    end as 'Category'
+    from products;
+
+- if
+select id, price, if(price <= 20000, 'Murah', 'Mahal') from products;
+
+-if if
+select id, price, if(price <= 15000, 'Murah', if(price <= 30000, 'Mahal', 'Mahal Banget Bro')) as 'Tidack Ramah Bintang 1' from products;
+
+
+
+- if null
+select id, name, description, ifnull(description, 'Yahaha Kosong kek hati') from products;
+
+
+Aggregate function
+==================
+
+digunakan untuk nyari harga paling mahal, rata-rata, total dan lain-lain
+
+- berapa banyak id
+select count(id) as 'Total Product' from products;
+
+- rata-rata
+select avg(price) as 'Rata-rata' from products;
+
+- nilai maximum atau tertinggi
+select max(price) as 'Nilai Tertinggi' from products;
+
+-nilai minimum atau terendah
+select min(price) as 'Nilai Terendah' from products;
+
+-nilai total stok
+select sum(price) as 'Total Harga' from products;
+
+
+
+
+
+
+
+
+
+
+
+
+ 

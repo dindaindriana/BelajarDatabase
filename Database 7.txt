@@ -1,0 +1,65 @@
+Index
+=====
+
+Buat table baru dengan menambahkan index di nama
+- create table sellers(
+	id int not null auto_increment,
+	name varchar(100) not null,
+	name2 varchar(100),
+	name3 varchar(100),
+	email varchar(100) not null,
+	primary key(id),
+	unique key email_unique (email),
+	index name_index (name),
+	index name2_index (name2),
+	index name3_index (name3),
+	index name1_name2_name3 (name1, name2, name3)
+	);
+
+Menambahkan index setelah table sudah terlanjur dibuat
+- alter table sellers add index name_index (name);
+
+Menghapus index setelah table sudah terlanjur dibuat
+alter table sellers drop index_name;
+
+
+Full-Text Search
+================
+
+Masalah dengan LIKE Operator
+============================
+
+Menambahkan fulltext jika table sudah terlanjur dibuat
+alter table products add fulltext products_search(name, description);
+
+Menghapus fulltext jika table sudah terlanjut dibuat
+alter table products drop index products_search
+
+Mode Full-Text Search
+=====================
+
+- Natural language mode
+select * from products where match(name, description) against('ginting' in natural language mode);
+
+- Boolean Mode
+select * from products where match(name, description) against('+ginting -rachel' in boolean mode);
+
+- Query Expansion Mode
+select * from products where match(name, description) against('ginting' with query expansion);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

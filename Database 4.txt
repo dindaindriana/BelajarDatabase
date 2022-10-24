@@ -1,0 +1,48 @@
+Select ditinct data
+===================
+
+- menghilangkan data duplikat
+select distinct category from products;
+
+Numeric function
+================
+
+- Aritmatik operator
+%, *, +, -, /, div
+select id, name, price div 1000 as "Price in K" from products;
+
+
+- Matematika function
+
+select pi();
+select power(10, 2);
+select cos(10);
+select sin(10);
+select tan(10);
+
+select id, cos(price), sin(price), tan(price) from products;
+
+
+Auto increment
+==============
+create table admin(  
+	id int not null auto_increment,
+	first_name varchar(100),
+	last_name varchar(100),
+	primary key(10)
+	) engine = innoDB;
+
+- insert data yang sudah di auto increment
+- secara umum ketika menggunakan auto incremen maka dia langsung primary key
+insert into admin (first_name, last_name) values('Rachel', 'Ginting');
+
+- melihat id terakhir
+select last_insert_id;
+
+insert into admin (first_name, last_name) values
+    ('Ardana', 'Putra'),
+    ('Ginting', 'Ardana'),
+    ('Ardana', 'Ginting'),
+    ('Putra', 'Ginting');
+
+
